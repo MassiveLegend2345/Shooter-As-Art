@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlyamckf3jwfl"]
+
+[ext_resource type="Script" uid="uid://bnqgffvfgfldf" path="res://bullets.gd" id="1_v8qja"]
+[ext_resource type="Texture2D" uid="uid://6h0ifdi12o7a" path="res://Cannabis_leaf.svg.png" id="2_t4vbm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7oki"]
+size = Vector2(55, 57)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_v8qja")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 1)
+scale = Vector2(0.0708333, 0.0660976)
+texture = ExtResource("2_t4vbm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 3.5)
+shape = SubResource("RectangleShape2D_v7oki")

@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8vpv30foergm"]
+
+[ext_resource type="Script" uid="uid://ci81je0uj6vj5" path="res://enemy_spawner.gd" id="1_iifgy"]
+[ext_resource type="Texture2D" uid="uid://4qhlohohle31" path="res://360x360.jpg" id="2_epg4t"]
+[ext_resource type="Script" uid="uid://8c3ruiy8ttff" path="res://pngtree_pixel_art_rocket_png_image_13061388.gd" id="3_3yqyl"]
+[ext_resource type="AudioStream" uid="uid://dg3ontuiqrdei" path="res://music/homer-simpson-woohoo-sound-fx-[AudioTrimmer.com].mp3" id="4_epg4t"]
+[ext_resource type="Script" uid="uid://bjoce0us2305d" path="res://destroy.gd" id="4_wujgv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hb8ge"]
+size = Vector2(357.813, 365.104)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_iifgy")
+
+[node name="shidstain" type="Sprite2D" parent="."]
+position = Vector2(1, -0.999969)
+scale = Vector2(0.35184, 0.335938)
+texture = ExtResource("2_epg4t")
+script = ExtResource("3_3yqyl")
+death_sfx = ExtResource("4_epg4t")
+
+[node name="Area2D" type="Area2D" parent="shidstain"]
+collision_layer = 5
+collision_mask = 3
+script = ExtResource("4_wujgv")
+
+[node name="shidstain2" type="CollisionShape2D" parent="shidstain/Area2D"]
+position = Vector2(-1.7489, -0.424866)
+shape = SubResource("RectangleShape2D_hb8ge")
